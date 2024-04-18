@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelryShop", "JewelryShop\JewelryShop.csproj", "{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryShopWebApi", "JewelryShopWebApi\JewelryShopWebApi.csproj", "{44CF062F-70D3-4FE4-91FA-06892DEADCD0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44CF062F-70D3-4FE4-91FA-06892DEADCD0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44CF062F-70D3-4FE4-91FA-06892DEADCD0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44CF062F-70D3-4FE4-91FA-06892DEADCD0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44CF062F-70D3-4FE4-91FA-06892DEADCD0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED7B2FCD-ED20-4700-AB54-F3AFE34AFAF5}
+	EndGlobalSection
+EndGlobal
