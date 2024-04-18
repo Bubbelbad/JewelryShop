@@ -1,0 +1,13 @@
+﻿body {
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.carousel-item img {
+    max-height: 500px;
+    max-width: 600px;
+    object-fit:contain; /* This will make the image cover the available space while maintaining its aspect ratio */
+}

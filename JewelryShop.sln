@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelryShop", "JewelryShop\JewelryShop.csproj", "{70D01BFF-8C4B-4EE2-A1D8-E63F15256034}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryShopWebApi", "JewelryShopWebApi\JewelryShopWebApi.csproj", "{44CF062F-70D3-4FE4-91FA-06892DEADCD0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JewelryShopWebApi", "JewelryShopWebApi\JewelryShopWebApi.csproj", "{44CF062F-70D3-4FE4-91FA-06892DEADCD0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
