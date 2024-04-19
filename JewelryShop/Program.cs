@@ -2,6 +2,16 @@ namespace JewelryShop
 {
     public class Program
     {
+
+        //Varför fungerar inte min font-family i index.css?
+
+        //Hur är mitt upplägg av klasser och filer? Är det bra eller dåligt?
+
+        //Behövs Services i mitt Razor Pages projekt? 
+
+        //Hur kan jag göra så att mina produkter visas på sidan?
+
+
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);

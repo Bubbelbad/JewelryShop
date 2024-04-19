@@ -1,5 +1,17 @@
-﻿body {
+﻿
+.monsieur-la-doulaise-regular {
+    font-family: "Monsieur La Doulaise", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
+
+body {
+}
+
+.shop-header {
+    font-family: "Monsieur La Doulaise", cursive !important;
+}
+
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
