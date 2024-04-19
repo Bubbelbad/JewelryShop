@@ -1,4 +1,6 @@
 
+using JewelryShopWebApi.Services;
+
 namespace JewelryShopWebApi
 {
     public class Program
@@ -11,6 +13,9 @@ namespace JewelryShopWebApi
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+            builder.Services.AddSingleton<OrderService>();
+            builder.Services.AddSingleton<ProductService>();
+
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 

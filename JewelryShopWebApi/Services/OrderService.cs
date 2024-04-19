@@ -12,6 +12,10 @@ namespace JewelryShopWebApi.Services
             orders.Add(new Order(2, 200, DateTime.Now));
             orders.Add(new Order(3, 300, DateTime.Now));
         }
+        public List<Order> GetOrders()
+        {
+            return orders;
+        }
 
         public bool CreateOrder(Order order)
         {
@@ -33,14 +37,9 @@ namespace JewelryShopWebApi.Services
             return false;
         }
 
-        public bool UpdateOrder()
+        public bool UpdateOrder(Order order)
         {
             throw new NotImplementedException();
-        }
-
-        public List<Order> GetOrders()
-        {
-            return orders;
         }
     }
 }
