@@ -1,3 +1,5 @@
+using JewelryShop.Models;
+using JewelryShop.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
@@ -5,16 +7,20 @@ namespace JewelryShop.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
+        HttpRequestSender HttpRequestSender;
+        public List<Product> springCollection { get; set; }
+        public Product product; 
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(HttpRequestSender httpRequestSender)
         {
-            _logger = logger;
+            this.HttpRequestSender = httpRequestSender;
         }
+
+
 
         public void OnGet()
         {
-
+            //springCollection = HttpRequestSender.GetProducts();
         }
     }
 }

@@ -1,16 +1,15 @@
+using JewelryShop.Services;
+
 namespace JewelryShop
 {
     public class Program
     {
+        //Hur är mitt upplägg av klasser och filer? Är det bra eller dåligt?
+        //- Vart hämtar jag objekten i JewelryShop från db?
+        //- Om jag klickar på en produkt, ska jag skicka params till en annan sida då enklast? 
+ 
 
         //Varför fungerar inte min font-family i index.css?
-
-        //Hur är mitt upplägg av klasser och filer? Är det bra eller dåligt?
-
-        //Behövs Services i mitt Razor Pages projekt? 
-
-        //Hur kan jag göra så att mina produkter visas på sidan?
-
 
         public static void Main(string[] args)
         {
@@ -18,6 +17,9 @@ namespace JewelryShop
 
             // Add services to the container.
             builder.Services.AddRazorPages();
+            builder.Services.AddTransient<HttpRequestSender>(); //Gör en temporär instans av ProductService-klassen,
+                                                             //som inte behöver komma ihåg variablerna
+
 
             var app = builder.Build();
 

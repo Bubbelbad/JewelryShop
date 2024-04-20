@@ -3,9 +3,6 @@
 @{
 }
 
-<div class="text-center">
-    <h1 class="display-4">Shopping Cart</h1>
-</div>
 <section class="h-100 h-custom" style="background-color: white;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -17,7 +14,7 @@
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted">3 items</h6> <!-- Den här behöver fixar beroende på items -->
+                    <h6 class="mb-0 text-muted">3 items</h6> <!-- Den här behöver fixar beroende på items i Shopping Cart -->
                   </div>
                   <hr class="my-4">
 
@@ -38,7 +35,7 @@
                       </button>
 
                       <input id="form1" min="0" name="quantity" value="1" type="number"
-                        class="form-control form-control-sm" /> <!-- Antal av produkten -->
+                        class="form-control form-control-sm" /> <!-- Antal av produkten vi valt -->
 
                       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
@@ -46,7 +43,7 @@
                       </button>
                     </div>
                     <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                      <h6 class="mb-0">€ 44.00</h6> <!-- PRIS -->
+                      <h6 class="mb-0">€ 44.00</h6> <!-- PRIS för Itemm -->
                     </div>
                     <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                       <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -61,8 +58,8 @@
                             class="img-fluid rounded-3" alt="Cotton T-shirt"> <!-- Här börjar item 1, BILD -->
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-3">
-                      <h6 class="text-muted">Ring</h6>
-                      <h6 class="text-black mb-0">Fragile Ring</h6>
+                      <h6 class="text-muted">Ring</h6> <!-- KATEGORI -->
+                      <h6 class="text-black mb-0">Fragile Ring</h6>  
                     </div>
                     <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
                       <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
@@ -124,7 +121,7 @@
 
                   <div class="pt-5">
                           <h6 class="mb-0">
-                          <a class="nav-link text-dark" asp-area="" asp-page="/Shop/ShopPage">
+                          <a class="nav-link text-dark" asp-area="" asp-page="/ShopPage/Shop">
                               <i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6> <!-- Länka tillbaka -->
                   </div>
                 </div>
@@ -143,8 +140,8 @@
 
                   <div class="mb-4 pb-2">
                     <select data-mdb-select-init>
-                      <option value="1">Standard-Delivery- $5.00</option>
-                      <option value="2">Snigel-PostNord- $10.50</option>
+                      <option value="1">Standard-Delivery $5.00</option>
+                      <option value="2">Snigel-Post $10.50</option>
                     </select>
                   </div>
 

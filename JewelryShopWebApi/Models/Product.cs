@@ -8,10 +8,7 @@
         public string Material { get; set; }
         public string Category { get; set; }
 
-        public Product()
-        {
-
-        }
+        public Product() { }
 
         public Product(int id, double price, double size, string material, string category)
         {

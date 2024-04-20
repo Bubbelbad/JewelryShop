@@ -7,14 +7,18 @@
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Whisper&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="~/css/index.css">
+
+
+<!-- Jag behöver loopa igenom alla springCollections och skriva ut strängen för dessa olika items. -->
+<!-- För att routa via params kan jag använda typ <a asp-page="/ProductPage/Product" asp-route-id="ATproduct.Id"> -->
 
 <div class="text-center">
     <h1 class="display-4 shop-header">Ewelry Shop</h1>
 </div>
-<div class="text-center">
-    <h4>When you don't shine enough by yourself</h4>
+<div class="text-center shop-quote">
+    <h3>When you don't shine by yourself</h3>
 </div>
 <div class="text-center mt-5">
     <br />
@@ -27,20 +31,43 @@
         <li data-bs-target="#carouselControls" data-bs-slide-to="1"></li>
         <li data-bs-target="#carouselControls" data-bs-slide-to="2"></li>
     </ol>
+
+
+    @for (int i = 0; i < 3; i++)
+    {
+        <div class="carousel-inner">
+            @if (i == 0)
+            {
+                <div class="carousel-item active">
+                    <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
+                        <img src="@Model.springCollection[i].Image" class="d-block w-100 h-100 mx-auto spring-collection-img">
+                    </a>
+                </div>
+            }
+            else
+            {
+                <div class="carousel-item">
+                    <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
+                        <img src="@Model.springCollection[i].Image" class="d-block w-100 h-100 mx-auto spring-collection-img">
+                    </a>
+                </div>
+            }
+        </div>
+    }
     <div class="carousel-inner">
         <div class="carousel-item active">
             <a href="/ProductPage/Product">
-                <img src="/images/ring1.jpg" class="d-block w-100 h-100 mx-auto" alt="First slide">
+                <img src="/images/ring1.jpg" class="d-block w-100 h-100 mx-auto spring-collection-img" alt="First slide">
             </a>
         </div>
         <div class="carousel-item">
             <a href="/ProductPage/Product">
-                <img src="/images/ring2.jpg" class="d-block w-100 h-100 mx-auto" alt="Second slide">
+                <img src="/images/ring2.jpg" class="d-block w-100 h-100 mx-auto spring-collection-img" alt="Second slide">
             </a>
         </div>
         <div class="carousel-item">
             <a href="/ProductPage/Product">
-                <img class="d-block w-100 h-100 mx-auto" src="/images/ring3.jpg" alt="Third slide">
+                <img class="d-block w-100 h-100 mx-auto spring-collection-img" src="/images/ring3.jpg" alt="Third slide">
             </a>
         </div>
     </div>

@@ -1,9 +1,24 @@
 ﻿@page
+@using JewelryShop.Models
 @model JewelryShop.Pages.Shop.ShopModel
 @{
 }
 
 <div class="text-center">
     <h1 class="display-4">Shop Page</h1>
+</div>
+
+@if (Model.products.Count == 0)
+{
+    <div class="text-center">
+        <h3>No products available</h3>
+    </div>
+}
+
+<div class="product-catalogue row row-cols-1 row-cols-md-3 g-4">
+    @foreach (Product product in Model.products)
+    {
+        <p>@product.Brand</p>
+    }
 </div>
 

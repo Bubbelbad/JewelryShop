@@ -1,15 +1,23 @@
 ﻿
-.monsieur-la-doulaise-regular {
-    font-family: "Monsieur La Doulaise", cursive;
+.whisper-regular {
+    font-family: "Whisper", cursive;
     font-weight: 400;
     font-style: normal;
 }
 
+
 body {
 }
 
-.shop-header {
-    font-family: "Monsieur La Doulaise", cursive !important;
+.shop-header,
+.shop-quote
+{
+    font-family: "Whisper", cursive !important;
+}
+
+.spring-collection-img
+{
+    border-radius: 5px 5px 5px 5px;
 }
 
 
