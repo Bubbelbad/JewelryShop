@@ -8,3 +8,7 @@ img {
     object-fit: contain;
     float: left; 
 }
+
+.back-to-shop {
+    display: inline-block;
+}

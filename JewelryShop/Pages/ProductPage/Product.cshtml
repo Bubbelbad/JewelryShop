@@ -8,8 +8,8 @@
 
 
 <div class="pt-5">
-    <h6 class="mb-0">
-        <a class="nav-link text-dark" asp-area="" onclick="goBack()">
+    <h6>
+        <a class="nav-link text-dark back-to-shop" asp-area="" onclick="goBack()">
             <i class="fas fa-long-arrow-alt-left me-2"></i>Back
         </a>
     </h6>
@@ -28,7 +28,8 @@
             <div class="d-flex justify-content-between mb-5">
                <h5>€ @Model.product.Price</h5> <!-- Här måste jag länka priset! -->
             </div>
-            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" data-mdb-ripple-color="dark"> Add to cart </button>
+            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" 
+            data-mdb-ripple-color="dark"> Add to cart </button>
             </div>
          </div>
     </div>

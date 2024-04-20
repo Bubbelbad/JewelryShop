@@ -14,14 +14,11 @@ namespace JewelryShop.Pages.ShoppingCartPage
         public ShoppingCartModel(ShoppingCartService shoppingCartService)
         {
             this.shoppingCartService = shoppingCartService;
-            shoppingCart.Add(new Product(1, 199.50, 8.5, "ring1.jpg", "Silver", "Ring", "somtehing"));
-            shoppingCart.Add(new Product(2, 299.50, 9, "ring2.jpg", "Silver", "Ring", "somtehing"));
-            shoppingCart.Add(new Product(3, 49.50, 7.5, "ring3.jpg", "Silver", "Ring", "somtehing"));
         }
 
         public void OnGet()
         {
-            //shoppingCart = shoppingCartService.GetShoppingCartList();
+            shoppingCart = shoppingCartService.GetShoppingCartList();
         }
     }
 }

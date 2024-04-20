@@ -4,6 +4,8 @@
 @{
 }
 
+<link rel="stylesheet" type="text/css" href="~/css/shopingCartPage.css" />
+
 <section class="h-100 h-custom" style="background-color: white;">
   <div class="container py-5 h-100">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -15,8 +17,10 @@
                 <div class="p-5">
                   <div class="d-flex justify-content-between align-items-center mb-5">
                     <h1 class="fw-bold mb-0 text-black">Shopping Cart</h1>
-                    <h6 class="mb-0 text-muted">3 items</h6> <!-- Den här behöver fixar beroende på items i Shopping Cart -->
+                    <h6 class="mb-0 text-muted">@Model.shoppingCart.Count() items</h6> <!-- Den här behöver fixar beroende på items i Shopping Cart -->
                   </div>
+
+                  <!-- Looping through shoppingCart to display items -->
                   @for (int i = 0; i < Model.shoppingCart.Count; i++)
                   {
                     <hr class="my-4">
@@ -24,13 +28,13 @@
                     <div class="row mb-4 d-flex justify-content-between align-items-center">
                         <div class="col-md-2 col-lg-2 col-xl-2">
                             <img src="@($"/Images/{Model.shoppingCart[i].Image}")"
-                                 class="img-fluid rounded-3" alt="Cotton T-shirt">  <!-- Här börjar item 1, BILD -->
+                                 class="img-fluid rounded-3" alt="Cotton T-shirt">  <!-- IMAGE -->
                         </div>
                         <div class="col-md-3 col-lg-3 col-xl-3">
-                            <h6 class="text-muted">@Model.shoppingCart[i].Category</h6> <!-- KATEGORI -->
-                            <h6 class="text-black mb-0">@Model.shoppingCart[i].Brand</h6> <!-- MATERIAL och Typ -->
+                            <h6 class="text-muted">@Model.shoppingCart[i].Category</h6> <!-- CATEGORY -->
+                            <h6 class="text-black mb-0">@Model.shoppingCart[i].Brand</h6> <!-- BRAND -->
                         </div>
-                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                        <div class="col-md-3 col-lg-3 col-xl-2 d-flex"> 
                             <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
                                     onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                                 <i class="fas fa-minus"></i>
@@ -45,7 +49,7 @@
                             </button>
                         </div>
                         <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
-                            <h6 class="mb-0">€ @Model.shoppingCart[i].Price</h6> <!-- PRIS för Itemm -->
+                            <h6 class="mb-0">€ @Model.shoppingCart[i].Price</h6> <!-- PRICE -->
                         </div>
                         <div class="col-md-1 col-lg-1 col-xl-1 text-end">
                             <a href="#!" class="text-muted"><i class="fas fa-times"></i></a>
@@ -56,7 +60,7 @@
                   <hr class="my-4">
                   <div class="pt-5">
                           <h6 class="mb-0">
-                          <a class="nav-link text-dark" asp-area="" asp-page="/ShopPage/Shop">
+                          <a class="nav-link text-dark back-to-shop" asp-area="" asp-page="/ShopPage/Shop">
                               <i class="fas fa-long-arrow-alt-left me-2"></i>Back to shop</a></h6> <!-- Länka tillbaka -->
                   </div>
                 </div>

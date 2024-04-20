@@ -1,2 +1,10 @@
 ﻿body {
 }
+
+.back-to-shop {
+    display: inline-block;
+}
+
+.add-to-cart {
+    width: 200px; 
+}
