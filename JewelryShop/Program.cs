@@ -4,12 +4,6 @@ namespace JewelryShop
 {
     public class Program
     {
-        //Hur är mitt upplägg av klasser och filer? Är det bra eller dåligt?
-        //- Vart hämtar jag objekten i JewelryShop från db?
-        //- Om jag klickar på en produkt, ska jag skicka params till en annan sida då enklast? 
- 
-
-        //Varför fungerar inte min font-family i index.css?
 
         public static void Main(string[] args)
         {
@@ -17,8 +11,10 @@ namespace JewelryShop
 
             // Add services to the container.
             builder.Services.AddRazorPages();
-            builder.Services.AddTransient<HttpRequestSender>(); //Gör en temporär instans av ProductService-klassen,
-                                                             //som inte behöver komma ihåg variablerna
+            builder.Services.AddTransient<HttpRequestSender>(); //Gör en temporär instans av HttpRequestSender-klassen
+                                                                //som inte behöver komma ihåg variablerna
+
+            builder.Services.AddSingleton<ShoppingCartService>(); //Singleton för att det bara ska finnas en instans av klassen
 
 
             var app = builder.Build();
