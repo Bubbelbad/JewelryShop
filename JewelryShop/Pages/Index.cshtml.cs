@@ -9,18 +9,15 @@ namespace JewelryShop.Pages
     {
         HttpRequestSender HttpRequestSender;
         public List<Product> springCollection { get; set; }
-        public Product product; 
-
+        
         public IndexModel(HttpRequestSender httpRequestSender)
         {
             this.HttpRequestSender = httpRequestSender;
         }
 
-
-
         public void OnGet()
         {
-            //springCollection = HttpRequestSender.GetProducts();
+            springCollection = HttpRequestSender.GetProducts();
         }
     }
 }

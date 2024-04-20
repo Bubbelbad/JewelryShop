@@ -18,7 +18,7 @@
     <h1 class="display-4 shop-header">Ewelry Shop</h1>
 </div>
 <div class="text-center shop-quote">
-    <h3>When you don't shine by yourself</h3>
+    <h3>Gold is the new black</h3>
 </div>
 <div class="text-center mt-5">
     <br />
@@ -32,45 +32,28 @@
         <li data-bs-target="#carouselControls" data-bs-slide-to="2"></li>
     </ol>
 
-
+    <div class="carousel-inner">
     @for (int i = 0; i < 3; i++)
     {
-        <div class="carousel-inner">
-            @if (i == 0)
-            {
-                <div class="carousel-item active">
-                    <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
-                        <img src="@Model.springCollection[i].Image" class="d-block w-100 h-100 mx-auto spring-collection-img">
-                    </a>
+        @if (i == 0)
+        {
+            <div class="carousel-item active">
+                <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
+                    <img src="@($"/images/{Model.springCollection[i].Image}")" class="d-block w-100 h-100 mx-auto spring-collection-img">
+                </a>
                 </div>
-            }
-            else
-            {
-                <div class="carousel-item">
-                    <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
-                        <img src="@Model.springCollection[i].Image" class="d-block w-100 h-100 mx-auto spring-collection-img">
-                    </a>
-                </div>
-            }
-        </div>
+        }
+        else
+        {
+            <div class="carousel-item">
+                <a asp-page="/ProductPage/Product" asp-route-id="@Model.springCollection[i].Id">
+                        <img src="@($"/images/{Model.springCollection[i].Image}")" class="d-block w-100 h-100 mx-auto spring-collection-img">
+                </a>
+            </div>
+        }
     }
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <a href="/ProductPage/Product">
-                <img src="/images/ring1.jpg" class="d-block w-100 h-100 mx-auto spring-collection-img" alt="First slide">
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="/ProductPage/Product">
-                <img src="/images/ring2.jpg" class="d-block w-100 h-100 mx-auto spring-collection-img" alt="Second slide">
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="/ProductPage/Product">
-                <img class="d-block w-100 h-100 mx-auto spring-collection-img" src="/images/ring3.jpg" alt="Third slide">
-            </a>
-        </div>
     </div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselControls" data-bs-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>

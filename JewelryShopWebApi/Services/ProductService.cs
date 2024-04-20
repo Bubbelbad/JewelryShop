@@ -9,9 +9,9 @@ namespace JewelryShopWebApi.Services
 
         public ProductService()
         {
-            products.Add(new Product(1, 199.50, 8.5, "Silver", "Ring"));
-            products.Add(new Product(2, 299.50, 9, "Silver", "Ring"));
-            products.Add(new Product(3, 49.50, 7.5, "Silver", "Ring"));
+            products.Add(new Product(1, 199.50, 8.5, "ring1.jpg", "Silver", "Ring", "somtehing"));
+            products.Add(new Product(2, 299.50, 9, "ring2.jpg", "Silver", "Ring", "somtehing"));
+            products.Add(new Product(3, 49.50, 7.5, "ring3.jpg", "Silver", "Ring", "somtehing"));
         }
 
 
