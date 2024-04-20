@@ -1,6 +1,8 @@
 ﻿using JewelryShop.Models;
 using Newtonsoft.Json;
+using System.Net;
 using System.Text.Json.Serialization;
+using static System.Net.WebRequestMethods;
 
 namespace JewelryShop.Services
 {
@@ -20,18 +22,22 @@ namespace JewelryShop.Services
             return products; 
         }
 
-        public Product GetProduct(int id)
+        public Product GetProductById(string id)
         {
             HttpClient client = new HttpClient();
-            HttpResponseMessage response = client.GetAsync("https://localhost:44300/api/products/" + id).Result;
+            HttpResponseMessage response = client.GetAsync("https://localhost:7138/api/Product/byid?id=" + id).Result;
             Product product = new Product();
 
             if (response.IsSuccessStatusCode)
             {
                 string json = response.Content.ReadAsStringAsync().Result;
                 product = JsonConvert.DeserializeObject<Product>(json);
+                return product;
             }
-
+            else if (response.StatusCode == HttpStatusCode.NotFound)
+            {
+                return product; //Need to do something else here
+            }
             return product; 
         }
     }

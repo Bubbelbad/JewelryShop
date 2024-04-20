@@ -1,4 +1,5 @@
 using JewelryShop.Models;
+using JewelryShop.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -7,22 +8,17 @@ namespace JewelryShop.Pages.ProductPage
 {
     public class ProductModel : PageModel
     {
-        public List<Product> productsList = new List<Product>();
+        HttpRequestSender httpRequestSender;
+        public Product product;
 
-        public Product soughtProduct { get; set;}
-
-        public void OnGet(int? id)
+        public ProductModel(HttpRequestSender httpRequestSender)
         {
-            if (id != null)
-            {
-                foreach (Product product in productsList)
-                {
-                    if (product.Id == id)
-                    {
-                        soughtProduct = product;
-                    }
-                }
-            }
+            this.httpRequestSender = httpRequestSender;
+        }
+
+        public void OnGet()
+        {   string id = Request.Query["id"];
+            product = httpRequestSender.GetProductById(id);
         }
     }
 }
