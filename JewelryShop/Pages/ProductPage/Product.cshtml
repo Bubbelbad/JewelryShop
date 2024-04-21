@@ -28,8 +28,14 @@
             <div class="d-flex justify-content-between mb-5">
                <h5>€ @Model.product.Price</h5> <!-- Här måste jag länka priset! -->
             </div>
-            <button type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg" 
-            data-mdb-ripple-color="dark"> Add to cart </button>
+            <form>
+                <input type="hidden" asp-for="product.Id" />
+                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
+                        data-mdb-ripple-color="dark">
+                    Add to cart
+                </button>
+            </form>
+            
             </div>
          </div>
     </div>

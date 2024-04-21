@@ -5,7 +5,7 @@ namespace JewelryShop.Services
 {
     public class ShoppingCartService
     {
-        public ObservableCollection<Product> shoppingCart = new ObservableCollection<Product>();
+        public List<Product> shoppingCart = new List<Product>();
 
         public ShoppingCartService()
         {
@@ -16,7 +16,7 @@ namespace JewelryShop.Services
             shoppingCart.Add(new Product(5, 49.50, 7.5, "ring4.jpg", "Silver", "Ring", "Mörkare diamantring"));
         }
 
-        public ObservableCollection<Product> GetShoppingCartList()
+        public List<Product> GetShoppingCartList()
         {
             return shoppingCart;
         }
@@ -26,9 +26,17 @@ namespace JewelryShop.Services
             shoppingCart.Add(product);
         }
 
-        public void DeleteProduct(Product product)
+        public void DeleteProduct(int id)
         {
-            shoppingCart.Remove(product);
+            for (int i = 0; i < shoppingCart.Count; i++)
+            {
+                if (shoppingCart[i].Id == id)
+                {
+                    Product product = shoppingCart[i];
+                    shoppingCart.Remove(product);
+                    break;
+                }
+            }   
         }
 
         public double GetTotalPrice()

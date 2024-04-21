@@ -8,17 +8,28 @@ namespace JewelryShop.Pages.ShoppingCartPage
 {
     public class ShoppingCartModel : PageModel
     {
-        public ObservableCollection<Product> shoppingCart = new ObservableCollection<Product>(); //En lista som innehåller produkterna i kundvagnen
+        public List<Product> shoppingCart = new List<Product>(); //En lista som innehåller produkterna i kundvagnen
         public ShoppingCartService shoppingCartService; 
+        public HttpRequestSender httpRequestSender;
 
-        public ShoppingCartModel(ShoppingCartService shoppingCartService)
+        public ShoppingCartModel(ShoppingCartService shoppingCartService, HttpRequestSender httpRequestSender)
         {
             this.shoppingCartService = shoppingCartService;
+            this.httpRequestSender = httpRequestSender;
         }
 
         public void OnGet()
         {
             shoppingCart = shoppingCartService.GetShoppingCartList();
+        }
+
+        public IActionResult RemoveFromCart(int id)
+        {
+            shoppingCartService.DeleteProduct(id);
+            shoppingCart = shoppingCartService.GetShoppingCartList();
+            return RedirectToPage();
+
+            //This is not binding from the html. I think the asp-thing is incorrect. 
         }
     }
 }
