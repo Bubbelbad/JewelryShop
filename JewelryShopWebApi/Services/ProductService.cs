@@ -33,11 +33,12 @@ namespace JewelryShopWebApi.Services
         {
             if (product != null) //Kanske lägga in det där som var .Value för att kolla alla värden är korrekt? 
             {
-                products.Add(product);
+                db.Products.Add(product);
                 return true;
             }
             return false; 
         }
+
 
         public bool UpdateProduct(Product product)
         {
@@ -67,7 +68,7 @@ namespace JewelryShopWebApi.Services
             Product product = GetProductById(id);
             if (product != null)
             {
-                products.Remove(product);
+                db.Products.Remove(product);
                 return true;
             }
             return false;

@@ -24,10 +24,10 @@ namespace JewelryShop.Pages.ProductPage
             product = httpRequestSender.GetProductById(id);
         }
 
-        public void OnPostAddItem(int idToAdd)
-        {
-            Product product = httpRequestSender.GetProductById(idToAdd.ToString());
-            shoppingCartService.AddProduct(product);
-        }
+       // public void OnPostAddItem(int idToAdd)
+       // {
+       //     Product product = httpRequestSender.GetProductById(idToAdd.ToString());
+       //     shoppingCartService.AddProduct(product);
+       // }
     }
 }

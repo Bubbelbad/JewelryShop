@@ -28,16 +28,14 @@
             <div class="d-flex justify-content-between mb-5">
                <h5>€ @Model.product.Price</h5>
             </div>
-            <form asp-page-handler="AddItem" asp-route-idToDelete="@Model.product.Id">
-                <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
-                        data-mdb-ripple-color="dark" onclick="goBack()">
-                    Add to cart
-                </button>
-            </form>
-            
+            <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
+                data-mdb-ripple-color="dark" onclick="addToBasket(@Model.product.Id)" id="addButton">
+                Add to cart
+            </button>
             </div>
          </div>
     </div>
 </section>
-<script>function goBack() { window.history.back(); }</script>
-<script></script>
+<<script>function goBack() { window.history.back(); }</script>
+<script src="/wwwroot/js/item.js"></script>
+<script src="/wwwroot/js/shoppingBasket.js"></script>

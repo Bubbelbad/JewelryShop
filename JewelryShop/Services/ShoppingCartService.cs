@@ -26,6 +26,7 @@ namespace JewelryShop.Services
             shoppingCart.Add(product);
         }
 
+
         public void DeleteProduct(int idToDelete)
         {
             for (int i = 0; i < shoppingCart.Count; i++)
