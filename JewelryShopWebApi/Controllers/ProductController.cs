@@ -60,7 +60,5 @@ namespace JewelryShopWebApi.Controllers
             return BadRequest();
 
         }
-
-
     }
 }

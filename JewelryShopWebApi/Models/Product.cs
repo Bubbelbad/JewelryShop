@@ -1,9 +1,14 @@
-﻿using System.Text.Json.Serialization;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace JewelryShopWebApi.Models
 {
     public class Product
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //Auto increment
+      //  [DatabaseGenerated(DatabaseGeneratedOption.Computed)] //Random tror jag. Vissa föredrar
         public int Id { get; set; }
         public double Price { get; set; }
         public double Size { get; set; }
@@ -12,10 +17,7 @@ namespace JewelryShopWebApi.Models
         public string Color { get; set; }
         public string Category { get; set; }
 
-        public Product()
-        {
-
-        }
+        public Product() { }
 
         public Product(int id, double price, double size, string Image, string brand, string color, string category)
         {

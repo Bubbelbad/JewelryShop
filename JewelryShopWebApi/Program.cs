@@ -1,5 +1,8 @@
 
+using JewelryShopWebApi.Models;
 using JewelryShopWebApi.Services;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 namespace JewelryShopWebApi
 {
@@ -11,10 +14,19 @@ namespace JewelryShopWebApi
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            //If a loop is detected, the serializer will throw an exception! Very good. 
+            builder.Services.AddControllers().AddJsonOptions(option => 
+            option.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-            builder.Services.AddSingleton<OrderService>();
-            builder.Services.AddSingleton<ProductService>();
+            builder.Services.AddTransient<OrderService>(); //We use addtransient because we're always getting the data fresh from DB
+            builder.Services.AddTransient<ProductService>();
+
+            builder.Services.AddRazorPages();
+            string connectionString = builder.Configuration.GetConnectionString("MySQLConnection");
+            builder.Services.AddDbContext<DatabaseContext>(options => options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+
 
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();

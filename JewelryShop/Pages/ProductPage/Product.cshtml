@@ -26,12 +26,11 @@
                  <img src="@($"/images/{Model.product.Image}")" class="d-block w-100 h-100 spring-collection-img">
             </div>
             <div class="d-flex justify-content-between mb-5">
-               <h5>€ @Model.product.Price</h5> <!-- Här måste jag länka priset! -->
+               <h5>€ @Model.product.Price</h5>
             </div>
-            <form>
-                <input type="hidden" asp-for="product.Id" />
+            <form asp-page-handler="AddItem" asp-route-idToDelete="@Model.product.Id">
                 <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-dark btn-block btn-lg"
-                        data-mdb-ripple-color="dark">
+                        data-mdb-ripple-color="dark" onclick="goBack()">
                     Add to cart
                 </button>
             </form>

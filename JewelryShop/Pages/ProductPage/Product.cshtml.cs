@@ -24,9 +24,9 @@ namespace JewelryShop.Pages.ProductPage
             product = httpRequestSender.GetProductById(id);
         }
 
-        public void OnPost(int id)
+        public void OnPostAddItem(int idToAdd)
         {
-            Product product = httpRequestSender.GetProductById(id.ToString());
+            Product product = httpRequestSender.GetProductById(idToAdd.ToString());
             shoppingCartService.AddProduct(product);
         }
     }

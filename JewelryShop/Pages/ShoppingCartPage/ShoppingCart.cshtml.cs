@@ -27,7 +27,6 @@ namespace JewelryShop.Pages.ShoppingCartPage
         {
             shoppingCartService.DeleteProduct(idToDelete);
             return RedirectToPage();
-
         }
     }
 }

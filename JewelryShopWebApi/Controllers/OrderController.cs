@@ -10,7 +10,7 @@ namespace JewelryShopWebApi.Controllers
     [ApiController]
     public class OrderController : ControllerBase
     {
-        OrderService orderService = new OrderService();
+        OrderService orderService;
 
         public OrderController(OrderService orderService)
         {

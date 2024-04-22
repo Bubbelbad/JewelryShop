@@ -1,29 +1,30 @@
 ﻿using JewelryShopWebApi.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Reflection.Metadata.Ecma335;
 
 namespace JewelryShopWebApi.Services
 {
     public class ProductService
     {
-        public List<Product> products = new List<Product>();
+        public List<Product> products;
+        DatabaseContext db;
 
-        public ProductService()
+        public ProductService(DatabaseContext db)
         {
-            products.Add(new Product(1, 199.50, 8.5, "ring1.jpg", "Silver", "Ring", "somtehing"));
-            products.Add(new Product(2, 299.50, 9, "ring2.jpg", "Silver", "Ring", "somtehing"));
-            products.Add(new Product(3, 49.50, 7.5, "ring3.jpg", "Silver", "Ring", "somtehing"));
+            this.db = db;
         }
 
 
         public List<Product> GetProducts()
         {
+            products = db.Products.ToList();
             return products;
         }
 
 
         public Product GetProductById(int id)
         {
-            Product product = products.FirstOrDefault(p => p.Id == id);
+            Product product = db.Products.Find(id);
             return product;
         }
 
@@ -38,9 +39,26 @@ namespace JewelryShopWebApi.Services
             return false; 
         }
 
-        public bool UpdateProduct()
+        public bool UpdateProduct(Product product)
         {
-            throw new NotImplementedException();
+            if (product.Id != 0)
+            {
+                return false;
+            }
+            Product productToUpdate = db.Products.Find(product.Id);
+            if (productToUpdate != null)
+            {
+                productToUpdate.Price = product.Price;
+                productToUpdate.Size = product.Size;
+                productToUpdate.Image = product.Image;
+                productToUpdate.Brand = product.Brand;
+                productToUpdate.Color = product.Color;
+                productToUpdate.Category = product.Category;
+
+                db.SaveChanges(); //Här sparas det i databasen!
+                return true;
+            }
+            return false; 
         }
 
 

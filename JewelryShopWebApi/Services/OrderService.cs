@@ -1,20 +1,25 @@
 ﻿using JewelryShopWebApi.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace JewelryShopWebApi.Services
 {
     public class OrderService
     {
         List<Order> orders = new List<Order>();
+        DatabaseContext db; 
 
-        public OrderService() 
+        public OrderService(DatabaseContext db) 
         { 
-            orders.Add(new Order(1, 100, DateTime.Now));
-            orders.Add(new Order(2, 200, DateTime.Now));
-            orders.Add(new Order(3, 300, DateTime.Now));
+            this.db = db;
         }
         public List<Order> GetOrders()
         {
-            return orders;
+            return db.Orders.Include(order => order.Products).ToList();
+        }
+
+        public Order GetOrderById(int id)
+        {
+            return db.Orders.Find(id);
         }
 
         public bool CreateOrder(Order order)
