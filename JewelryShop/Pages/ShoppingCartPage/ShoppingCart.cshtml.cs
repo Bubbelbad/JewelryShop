@@ -23,13 +23,11 @@ namespace JewelryShop.Pages.ShoppingCartPage
             shoppingCart = shoppingCartService.GetShoppingCartList();
         }
 
-        public IActionResult RemoveFromCart(int id)
+        public IActionResult OnPostRemoveItem(int idToDelete)
         {
-            shoppingCartService.DeleteProduct(id);
-            shoppingCart = shoppingCartService.GetShoppingCartList();
+            shoppingCartService.DeleteProduct(idToDelete);
             return RedirectToPage();
 
-            //This is not binding from the html. I think the asp-thing is incorrect. 
         }
     }
 }

@@ -26,11 +26,11 @@ namespace JewelryShop.Services
             shoppingCart.Add(product);
         }
 
-        public void DeleteProduct(int id)
+        public void DeleteProduct(int idToDelete)
         {
             for (int i = 0; i < shoppingCart.Count; i++)
             {
-                if (shoppingCart[i].Id == id)
+                if (shoppingCart[i].Id == idToDelete)
                 {
                     Product product = shoppingCart[i];
                     shoppingCart.Remove(product);

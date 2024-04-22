@@ -19,7 +19,8 @@ namespace JewelryShop.Pages.ProductPage
         }
 
         public void OnGet()
-        {   string id = Request.Query["id"];
+        {  
+            string id = Request.Query["id"];
             product = httpRequestSender.GetProductById(id);
         }
 
