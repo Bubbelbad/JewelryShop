@@ -3,7 +3,7 @@ using JewelryShop.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace JewelryShop.Pages.Shop
+namespace JewelryShop.Pages.ShopPage
 {
     public class ShopModel : PageModel
     {
